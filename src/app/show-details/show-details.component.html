@@ -1,0 +1,17 @@
+<div>
+  <div> <!--image div-->
+    <img [src]='show.showImage' />
+  </div>
+  <div> <!--right info div-->
+    <p><h2>{{show.showTitle}}</h2>
+    <p><h3>Rating:</h3>{{show.rating}}/10
+    <p><h3>Showing on:</h3> {{show.channel}}
+    <p><h3>Genre:</h3> {{show.genre}}
+    <p><h3>Language:</h3> {{show.language}}
+    <p><h3>First Aired:</h3> {{show.premierDate}}
+  </div>
+  <div> <!--summary div-->
+    <p><a href="${{show.previousEpisode}}">Most recent episode</a></p>
+    <p><h3>Show Summary:</h3> {{show.summary}}
+  </div>
+</div>
