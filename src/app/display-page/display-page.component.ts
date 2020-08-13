@@ -13,7 +13,7 @@ current : IDisplayPage
       image0:'',
       name0 : 'Fruits',
       image1 : '',
-      name1:'  vegetables', 
+      name1:'vegetables', 
       image2: '',
       name2: 'apples',
       image3:'',
