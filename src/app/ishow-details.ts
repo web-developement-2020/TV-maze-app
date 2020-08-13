@@ -10,8 +10,13 @@ export interface IShowDetails {
   previousEpisode: string,
   premierDate: Date,
   summary: string,
-  schedule: Date,
-  castName: string,
-  castLink: string,
-  castImage: string 
+  schedule:{
+    days: string,
+    time: Date
+  },
+  cast:{
+    castName: string,
+    castLink: string,
+    castImage: string
+  }
 }

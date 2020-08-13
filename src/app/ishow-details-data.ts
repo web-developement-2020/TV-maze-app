@@ -19,7 +19,7 @@ export interface IShowDetailsData {
     }
 
   },
-  premiered: string
+  premiered: string,
   summary: string,
   schedule: {
     time: string,

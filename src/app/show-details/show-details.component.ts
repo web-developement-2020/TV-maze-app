@@ -9,12 +9,18 @@ import { using } from 'rxjs';
   templateUrl: './show-details.component.html',
   styleUrls: ['./show-details.component.css']
 })
+
 export class ShowDetailsComponent implements OnInit {
 
-  show: IShowDetails
-  constructor() { 
+  ngOnInit(): void {
+    throw new Error("Method not implemented.");
+  }
+  
+  show: IShowDetails 
+
+    constructor() { 
     this.show = {
-      showTitle: 'A Really Cool Show',
+      showTitle: 'Under the Dome',
       showImage: 'http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg',
       showLink: 'http://www.tvmaze.com/shows/1/under-the-dome',
       rating: 6.75,
@@ -26,14 +32,14 @@ export class ShowDetailsComponent implements OnInit {
       premierDate: new Date(),
       summary: 'Soluta velit et ullam quasi. Iste sed id aliquid excepturi. Hic reiciendis eos id laudantium rerum numquam qui numquam. In corrupti nemo voluptas. Ex qui officiis qui voluptate explicabo.</p><p>Sit et animi architecto. Odio omnis incidunt delectus. Fugit voluptas voluptas sint et.</p><p>Odit facere ex aut debitis repellendus. Ad maxime sed dignissimos nostrum iusto dolorem. Libero consequuntur consequuntur maxime mollitia quos dolor laudantium illum. Et error amet possimus et. Enim error aut quae blanditiis eius voluptatum.</p>',
       schedule: new Date (),
-      castName: 'Anthony Jones',
-      castImage:'',
-      castLink:'' 
-      
+      cast: {
+        castName: 'Mike Vogel',
+        castLink: 'http://www.tvmaze.com/people/1/mike-vogel',
+        castImage: 'http://static.tvmaze.com/uploads/images/medium_portrait/0/1815.jpg'
+      }
     }
   }
 
-  ngOnInit(): void {
-  }
 
+  
 }
