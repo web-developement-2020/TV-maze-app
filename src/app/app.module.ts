@@ -12,7 +12,7 @@ import { DisplayPageComponent } from './display-page/display-page.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ShowDetailsComponent
+    ShowDetailsComponent,
     DisplayPageComponent
   ],
   imports: [
