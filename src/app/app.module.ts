@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DisplayPageComponent } from './display-page/display-page.component';
-
+import { DisplayService } from './display.service';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,9 +13,10 @@ import { DisplayPageComponent } from './display-page/display-page.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DisplayService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

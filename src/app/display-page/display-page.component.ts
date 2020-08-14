@@ -12,14 +12,19 @@ current : IDisplayPage
     this.current = {
       image0:'',
       name0 : 'Fruits',
+      link0 : '',
       image1 : '',
-      name1:'vegetables', 
+      name1: 'vegetables',
+      link1 : '', 
       image2: '',
       name2: 'apples',
+      link2 : '',
       image3:'',
       name3:'bananas',
+      link3 : '',
       image4:'',
-      name4:'pineapples'
+      name4:'pineapples',
+      link4 : ''
     }
   }
 
