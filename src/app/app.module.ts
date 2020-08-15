@@ -8,6 +8,11 @@ import {ShowService} from './show.service';
 import {HttpClientModule} from '@angular/common/http';
 import { DisplayPageComponent } from './display-page/display-page.component';
 
+import { DisplayService } from './display.service';
+import { HttpClientModule } from '@angular/common/http';
+
+
+
 
 @NgModule({
   declarations: [
@@ -20,7 +25,11 @@ import { DisplayPageComponent } from './display-page/display-page.component';
     AppRoutingModule,
     HttpClientModule
   ],
+
+  providers: [DisplayService],
+
   providers: [ShowService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
