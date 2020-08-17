@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShowDetailsComponent } from './show-details/show-details.component';
 import {ShowService} from './show.service';
-import {HttpClientModule} from '@angular/common/http';
 import { DisplayPageComponent } from './display-page/display-page.component';
 
 import { DisplayService } from './display.service';
@@ -26,9 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
 
-  providers: [DisplayService],
+  providers: [DisplayService,ShowService],
 
-  providers: [ShowService],
+  
 
   bootstrap: [AppComponent]
 })
