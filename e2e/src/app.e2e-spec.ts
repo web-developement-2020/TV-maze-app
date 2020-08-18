@@ -10,7 +10,11 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
+<<<<<<< HEAD
+    expect(page.getTitleText()).toEqual('my-tv-maze-app app is running!');
+=======
     expect(page.getTitleText()).toEqual('tv-maze-app app is running!');
+>>>>>>> edba7aa2d1f4674642c8a562afd75c79e5da6753
   });
 
   afterEach(async () => {
