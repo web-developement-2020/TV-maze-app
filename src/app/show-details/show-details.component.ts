@@ -21,7 +21,7 @@ export class ShowDetailsComponent implements OnInit {
 
 
     ngOnInit(): void {
-      this.showService.getShow('1234').subscribe(data => this.show = data )
+      this.showService.getShow('123').subscribe(data => this.show = data )
     }
   
 }

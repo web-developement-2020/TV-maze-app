@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FakeSearchResultsComponent } from './fake-search-results/fake-search-results.component';
 import { MatExpansionModule } from '@angular/material/expansion';
-import {MatGridList} from '@angular/material/grid-list'
+import {MatGridList, MatGridListModule} from '@angular/material/grid-list'
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import {MatGridList} from '@angular/material/grid-list'
     HttpClientModule,
     BrowserAnimationsModule,
     MatExpansionModule,
-    MatGridList
+    MatGridListModule
   ],
 
   providers: [DisplayService,ShowService],
