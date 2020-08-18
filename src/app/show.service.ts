@@ -27,16 +27,21 @@ export class ShowService {
       previousEpisode: data._links.previousepisode.href,
       premierDate: new Date (data.premiered),
       summary: data.summary,
-      schedule:{
-        days: data.schedule.days.toString(),
-        time: new Date (data.schedule.time)
-      },
-      cast:{
-        castName: data._embedded.cast[0].person.name,
-        castLink: data._embedded.cast[0].person.url,
-        castImage: data._embedded.cast[0].person.image.medium
+      time: new Date (data.schedule.time),
+      days: data.schedule.days.toString(),
+      castName1: data._embedded.cast[0].person.name,
+      castLink1: data._embedded.cast[0].person.url,
+      castImage1: data._embedded.cast[0].person.image.medium,
+      castName2: data._embedded.cast[1].person.name,
+      castLink2: data._embedded.cast[1].person.url,
+      castImage2: data._embedded.cast[1].person.image.medium,
+      castName3: data._embedded.cast[2].person.name,
+      castLink3: data._embedded.cast[2].person.url,
+      castImage3: data._embedded.cast[2].person.image.medium,
+      castName4: data._embedded.cast[3].person.name,
+      castLink4: data._embedded.cast[3].person.url,
+      castImage4: data._embedded.cast[3].person.image.medium
   }
-    }
   }
    
 }
