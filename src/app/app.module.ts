@@ -9,20 +9,25 @@ import { DisplayPageComponent } from './display-page/display-page.component';
 
 import { DisplayService } from './display.service';
 import { HttpClientModule } from '@angular/common/http';
-
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FakeSearchResultsComponent } from './fake-search-results/fake-search-results.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import {MatGridList} from '@angular/material/grid-list'
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowDetailsComponent,
-    DisplayPageComponent
+    DisplayPageComponent,
+    FakeSearchResultsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatExpansionModule,
+    MatGridList
   ],
 
   providers: [DisplayService,ShowService],
