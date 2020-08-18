@@ -35,7 +35,34 @@ export interface IShowDetailsData {
           medium: string
         }
       }
-      }
+      },
+      {
+      person: {
+        name: string,
+        url: string,
+        image:{
+          medium: string
+          }
+        }
+        },
+        {
+          person: {
+            name: string,
+            url: string,
+            image:{
+              medium: string
+            }
+          }
+          },
+          {
+            person: {
+              name: string,
+              url: string,
+              image:{
+                medium: string
+              }
+            }
+            }
     ]
   }
 }
