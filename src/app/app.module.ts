@@ -17,11 +17,10 @@ import { WordSearchComponent } from './word-search/word-search.component';
 import { ShowDetailsComponent } from './show-details/show-details.component';
 import {ShowService} from './show.service';
 import { DisplayPageComponent } from './display-page/display-page.component';
-import { DisplayService } from './display.service';
 import { FakeSearchResultsComponent } from './fake-search-results/fake-search-results.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import {MatGridListModule} from '@angular/material/grid-list';
-
+import { DisplayService } from './display.service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +36,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     HttpClientModule,
     BrowserAnimationsModule,
     MatExpansionModule,
-    MatGridListModule
+    MatGridListModule,
     MatCardModule,
     MatToolbarModule,
     MatFormFieldModule,
@@ -51,7 +50,10 @@ import {MatGridListModule} from '@angular/material/grid-list';
   
 
 
-  providers: [DisplayService,ShowService, SearchService],
+  providers: [
+    DisplayService,
+    ShowService,
+    SearchService],
 
   
 
