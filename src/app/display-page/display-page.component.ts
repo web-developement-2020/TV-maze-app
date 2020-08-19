@@ -7,6 +7,7 @@ import { IDisplayPage } from '../idisplay-page'
   styleUrls: ['./display-page.component.css']
 })
 export class DisplayPageComponent implements OnInit {
+  
 current : IDisplayPage
   constructor() { 
     this.current = {
