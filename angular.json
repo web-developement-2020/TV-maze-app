@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tv-maze-app": {
+    "my-tv-maze-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/tv-maze-app",
+            "outputPath": "dist/my-tv-maze-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "tv-maze-app:build"
+            "browserTarget": "my-tv-maze-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "tv-maze-app:build:production"
+              "browserTarget": "my-tv-maze-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "tv-maze-app:build"
+            "browserTarget": "my-tv-maze-app:build"
           }
         },
         "test": {
@@ -112,19 +112,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "tv-maze-app:serve"
+            "devServerTarget": "my-tv-maze-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "tv-maze-app:serve:production"
+              "devServerTarget": "my-tv-maze-app:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "tv-maze-app",
+  "defaultProject": "my-tv-maze-app",
   "cli": {
-    "analytics": "635e747b-9da3-4938-9556-1bf718f1f525"
+    "analytics": "7b0e5f47-20a2-490c-8145-49db7360393f"
   }
 }

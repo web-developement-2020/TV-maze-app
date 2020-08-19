@@ -1,10 +1,29 @@
 
-<header style="background-color:#a8dadc;"><h1>header component </h1></header>
+<div style="text-align: center">
+  <mat-toolbar color="primary">
+    Local search shows, people, updates...
+  </mat-toolbar>
+  <div>Your choice, your taste, right now!</div>
+  <div fvFlex></div>
+  <div fxLayout="row" fxLayoutAlign="center">
 
+    <app-word-search (searchEvent)="doSearch($event)"></app-word-search>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="center">
+    <div fvFlex="300px">
+      <mat-card>
+        Search by name:
+        <app-current-search [current]="currentSearch"></app-current-search>
+      </mat-card>
+    </div>
+    <div fvFlex></div>
+   </div>
+   
 <main>
-  <app-fake-search-results></app-fake-search-results>
+<app-fake-search-results></app-fake-search-results>
 
 <app-display-page></app-display-page>
 </main>
-
+    
 <footer><i>Created by Kanchan Sharma, Lishitha Karnati, Juyean Lee, and Teal Larson. 2020.</i></footer>
