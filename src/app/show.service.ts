@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IShowDetailsData } from './ishow-details-data'
+import { IShowDetailsData } from './ishow-details-data';
 import { IShowDetails } from './ishow-details';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +11,16 @@ export class ShowService {
 
   constructor(private httpClient: HttpClient) {}
 
+  @Input() showId: string;
+
+  
   getShow(showId: string){
-    return this.httpClient.get<IShowDetailsData>(`http://api.tvmaze.com/shows/${showId}?embed=cast`)
+    return this.httpClient.get<IShowDetailsData>(`http://api.tvmaze.com/shows/${showId}?embed=cast`).pipe(
+      map(data => this.transformToIShowDetails(data))
+    )
     }
   
+
   transformToIShowDetails(data:IShowDetailsData):IShowDetails{
     return {
       showTitle: data.name,
@@ -42,6 +49,6 @@ export class ShowService {
       castLink4: data._embedded.cast[3].person.url,
       castImage4: data._embedded.cast[3].person.image.medium
   }
+
   }
-   
 }

@@ -1,3 +1,4 @@
+
 <div style="text-align: center">
   <mat-toolbar color="primary">
     Local search shows, people, updates...
@@ -17,11 +18,16 @@
       </mat-card>
     </div>
     <div fvFlex></div>
-  </div>
+     </div>
 </div>
-<!-- <app-current-search></app-current-search> -->
-<!-- <app-show-details></app-show-details> -->
-<!-- <app-display-page></app-display-page> -->
-<br>
+   <br>
 <app-header (searchEvent)=goSearch($event)> </app-header> 
 <app-searched-shows [shows]="shows"></app-searched-shows>
+<main>
+<app-fake-search-results></app-fake-search-results>
+
+<app-display-page></app-display-page>
+</main>
+    
+<footer><i>Created by Kanchan Sharma, Lishitha Karnati, Juyean Lee, and Teal Larson. 2020.</i></footer>
+
