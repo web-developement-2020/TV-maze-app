@@ -1,7 +1,26 @@
-<h1>App model</h1>
+<div style="text-align: center">
+  <mat-toolbar color="primary">
+    Local search shows, people, updates...
+  </mat-toolbar>
+  <div>Your choice, your taste, right now!</div>
+  <div fvFlex></div>
+  <div fxLayout="row" fxLayoutAlign="center">
 
-<app-show-details></app-show-details>
-<header>header component </header>
-<app-display-page></app-display-page>
+    <app-word-search (searchEvent)="doSearch($event)"></app-word-search>
+  </div>
 
-<div> show desc component</div>
+  <div fxLayout="row" fxLayoutAlign="center">
+    <div fvFlex="300px">
+      <mat-card>
+        Search by name:
+        <app-current-search [current]="currentSearch"></app-current-search>
+      </mat-card>
+    </div>
+    <div fvFlex></div>
+  </div>
+
+<app-show-details>
+</app-show-details>
+<app-display-page>
+</app-display-page>
+</div>
