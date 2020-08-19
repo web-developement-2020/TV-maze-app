@@ -18,8 +18,11 @@
       </mat-card>
     </div>
     <div fvFlex></div>
-   </div>
-   
+     </div>
+</div>
+   <br>
+<app-header (searchEvent)=goSearch($event)> </app-header> 
+<app-searched-shows [shows]="shows"></app-searched-shows>
 <main>
 <app-fake-search-results></app-fake-search-results>
 
@@ -27,3 +30,4 @@
 </main>
     
 <footer><i>Created by Kanchan Sharma, Lishitha Karnati, Juyean Lee, and Teal Larson. 2020.</i></footer>
+
