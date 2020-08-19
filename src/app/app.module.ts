@@ -18,10 +18,9 @@ import { ShowDetailsComponent } from './show-details/show-details.component';
 import {ShowService} from './show.service';
 import { DisplayPageComponent } from './display-page/display-page.component';
 import { DisplayService } from './display.service';
-
-
-
-
+import { FakeSearchResultsComponent } from './fake-search-results/fake-search-results.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -29,13 +28,16 @@ import { DisplayService } from './display.service';
     CurrentSearchComponent,
     WordSearchComponent,
     ShowDetailsComponent,
-    DisplayPageComponent
+    DisplayPageComponent,
+    FakeSearchResultsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatExpansionModule,
+    MatGridListModule
     MatCardModule,
     MatToolbarModule,
     MatFormFieldModule,
@@ -44,7 +46,6 @@ import { DisplayService } from './display.service';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-
   ],
 
   
