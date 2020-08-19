@@ -1,9 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { CurrentSearchComponent } from './current-search/current-search.component';
 import {SearchService} from './search.service';
 import {HttpClientModule} from '@angular/common/http';
@@ -16,29 +14,30 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatIconModule} from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WordSearchComponent } from './word-search/word-search.component';
-
 import { ShowDetailsComponent } from './show-details/show-details.component';
 import {ShowService} from './show.service';
 import { DisplayPageComponent } from './display-page/display-page.component';
-
 import { DisplayService } from './display.service';
-import { HttpClientModule } from '@angular/common/http';
-
-
-
-
+import { FakeSearchResultsComponent } from './fake-search-results/fake-search-results.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
     AppComponent,
     CurrentSearchComponent,
-    WordSearchComponent
+    WordSearchComponent,
+    ShowDetailsComponent,
+    DisplayPageComponent,
+    FakeSearchResultsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatExpansionModule,
+    MatGridListModule
     MatCardModule,
     MatToolbarModule,
     MatFormFieldModule,
@@ -46,7 +45,7 @@ import { HttpClientModule } from '@angular/common/http';
     FlexLayoutModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
 
   
