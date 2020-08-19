@@ -37,7 +37,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     HttpClientModule,
     BrowserAnimationsModule,
     MatExpansionModule,
-    MatGridListModule
+    MatGridListModule,
     MatCardModule,
     MatToolbarModule,
     MatFormFieldModule,
