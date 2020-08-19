@@ -24,9 +24,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { ShowsService } from './shows.service';
 import { HeaderComponent } from './header/header.component';
 import { MatButtonModule } from '@angular/material/button';
-
 import { FakeSearchResultsComponent } from './fake-search-results/fake-search-results.component';
-import { MatExpansionModule } from '@angular/material/expansion';
 import {MatGridListModule} from '@angular/material/grid-list';
 
 
@@ -50,7 +48,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     HttpClientModule,
     BrowserAnimationsModule,
     MatExpansionModule,
-    MatGridListModule
+    MatGridListModule,
     MatCardModule,
     MatToolbarModule,
     MatFormFieldModule,

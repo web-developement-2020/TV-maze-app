@@ -1,0 +1,11 @@
+img{
+  height: 100px;
+  width: auto;
+  clear: both;
+}
+
+.script-menu >:host .mat-figure {
+  height: 125px;
+}
+
+

@@ -22,10 +22,11 @@
 </div>
    <br>
 <app-header (searchEvent)=goSearch($event)> </app-header> 
-<app-searched-shows [shows]="shows"></app-searched-shows>
-<main>
-<app-fake-search-results></app-fake-search-results>
 
+<main>
+<!-- <app-fake-search-results></app-fake-search-results> -->
+
+<app-searched-shows [shows]="shows"></app-searched-shows>
 <app-display-page></app-display-page>
 </main>
     
