@@ -5,34 +5,36 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { CurrentSearchComponent } from './current-search/current-search.component';
-import {SearchService} from './search.service';
-import {HttpClientModule} from '@angular/common/http';
+import { SearchService } from './search.service';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule} from '@angular/material/card';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {FlexLayoutModule} from '@angular/flex-layout';
-import {MatIconModule} from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WordSearchComponent } from './word-search/word-search.component';
 
 import { ShowDetailsComponent } from './show-details/show-details.component';
-import {ShowService} from './show.service';
+import { ShowService } from './show.service';
 import { DisplayPageComponent } from './display-page/display-page.component';
 
 import { DisplayService } from './display.service';
-import { HttpClientModule } from '@angular/common/http';
-
-
-
-
+import { SearchedShowsComponent } from './searched-shows/searched-shows.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { ShowsService } from './shows.service';
+import { HeaderComponent } from './header/header.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
     AppComponent,
     CurrentSearchComponent,
-    WordSearchComponent
+    WordSearchComponent,
+    SearchedShowsComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,17 +48,13 @@ import { HttpClientModule } from '@angular/common/http';
     FlexLayoutModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatExpansionModule,
+    MatButtonModule,
   ],
 
-  
+  providers: [DisplayService, ShowService, SearchService, ShowsService],
 
-
-  providers: [DisplayService,ShowService, SearchService],
-
-  
-
-
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

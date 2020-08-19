@@ -19,3 +19,9 @@
     <div fvFlex></div>
   </div>
 </div>
+<!-- <app-current-search></app-current-search> -->
+<!-- <app-show-details></app-show-details> -->
+<!-- <app-display-page></app-display-page> -->
+<br>
+<app-header (searchEvent)=goSearch($event)> </app-header> 
+<app-searched-shows [shows]="shows"></app-searched-shows>

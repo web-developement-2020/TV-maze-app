@@ -1,0 +1,85 @@
+.flex-container {
+  display: flex;
+  align-items: stretch;
+  background-color: #EBF4F5;
+  align-items: baseline;
+  
+}
+.flex-container > div {
+  margin-top: 10px;
+}
+.title{
+  flex-grow: 1;
+  font-size:20px;
+  text-align:left;
+  color:#1e4278;
+  color:#9b0404;
+
+  vertical-align: bottom;
+  
+}
+.title span {
+  color:#626262;
+  font-size:18px;
+  font-weight: bold;
+  vertical-align: bottom;
+}
+
+.search-form{
+  flex-grow:1;
+  flex-basis: auto;
+  color:#576e91;
+  font-size:10px;
+}
+.search-field{
+  width:150px;
+}
+
+button:focus{
+  outline:none;
+  border:1#576e91;
+}
+
+.flex-container{
+  flex: auto;
+  background-color: #deecee;
+  color: #626262;
+  font-size:11px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.mat-input-element {
+    caret-color: #b87bd3;
+}
+
+
+.search-field[_ngcontent-bpj-c106] {
+    color: rgb(56, 56, 56);
+}
+
+.search-form[_ngcontent-rya-c106] {
+    flex-grow: 1;
+    flex-basis: auto;
+    color: rgb(56, 56, 56);
+    font-size: 10px;
+}
+
+::placeholder{
+    color: rgb(56, 56, 56);
+opacity: 1;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+    color: rgb(56, 56, 56)!important;
+
+ }
+ ::ng-deep.mat-form-field-ripple {
+ /*change color of underline when focused*/
+ background-color: #b6b6b6 !important;;
+}
+ ::ng-deep.mat-form-field-underline {
+  /* change color of underline */
+  background-color: #626262 !important; 
+}  

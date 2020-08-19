@@ -12,7 +12,6 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.0.6",
-<<<<<<< HEAD
     "@angular/cdk": "^10.1.3",
     "@angular/common": "~10.0.6",
     "@angular/compiler": "~10.0.6",
@@ -23,18 +22,9 @@
     "@angular/platform-browser": "~10.0.6",
     "@angular/platform-browser-dynamic": "~10.0.6",
     "@angular/router": "~10.0.6",
-=======
-    "@angular/common": "~10.0.6",
-    "@angular/compiler": "~10.0.6",
-    "@angular/core": "~10.0.6",
-    "@angular/forms": "~10.0.6",
-    "@angular/platform-browser": "~10.0.6",
-    "@angular/platform-browser-dynamic": "~10.0.6",
-    "@angular/router": "~10.0.6",
     "node": "^14.8.0",
     "node-modules": "^1.0.1",
     "nodejs": "0.0.0",
->>>>>>> edba7aa2d1f4674642c8a562afd75c79e5da6753
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
