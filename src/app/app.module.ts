@@ -20,7 +20,9 @@ import { DisplayPageComponent } from './display-page/display-page.component';
 import { FakeSearchResultsComponent } from './fake-search-results/fake-search-results.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import {MatGridListModule} from '@angular/material/grid-list';
-import { DisplayService } from './display.service'
+import { DisplayService } from './display.service';
+import { DatePipe} from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +55,8 @@ import { DisplayService } from './display.service'
   providers: [
     DisplayService,
     ShowService,
-    SearchService],
+    SearchService,
+    DatePipe],
 
   
 
