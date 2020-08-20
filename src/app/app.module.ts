@@ -22,7 +22,6 @@ import {ShowService} from './show.service';
 import { DisplayPageComponent } from './display-page/display-page.component';
 
 import { DisplayService } from './display.service';
-import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -49,12 +48,12 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule
   ],
 
-  
+
 
 
   providers: [DisplayService,ShowService, SearchService],
 
-  
+
 
 
   bootstrap: [AppComponent]
