@@ -17,15 +17,18 @@ import { WordSearchComponent } from './word-search/word-search.component';
 import { ShowDetailsComponent } from './show-details/show-details.component';
 import { ShowService } from './show.service';
 import { DisplayPageComponent } from './display-page/display-page.component';
+
 import { DisplayService } from './display.service';
 
 import { SearchedShowsComponent } from './searched-shows/searched-shows.component';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { ShowsService } from './shows.service';
+
 import { HeaderComponent } from './header/header.component';
 import { MatButtonModule } from '@angular/material/button';
 import { FakeSearchResultsComponent } from './fake-search-results/fake-search-results.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+
+import { DatePipe} from '@angular/common';
 
 
 @NgModule({
@@ -61,11 +64,11 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatExpansionModule,
     MatButtonModule,
 
-
-  ],
-
-  providers: [DisplayService, ShowService, SearchService, ShowsService],
-
-  bootstrap: [AppComponent],
+  providers: [
+    DisplayService,
+    ShowService,
+    SearchService,
+    DatePipe],
+ bootstrap: [AppComponent],
 })
 export class AppModule {}
