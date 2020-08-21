@@ -1,7 +1,7 @@
 <div>
-  <div> <!--image div-->
+  <!-- <div> 
     <img [src]='show.showImage' />
-  </div>
+  </div> -->
   <div> <!--right info div-->
     <p><h2><a [href]="show.showLink">{{show.showTitle}}</a></h2>
     <p><h3>Rating:</h3>{{show.rating}}/10
@@ -15,23 +15,29 @@
     <p><h3>Show Summary:</h3> {{show.summary}}
   </div>
 
-  <div><!--cast row-->
-  <h2>Featured Cast</h2>
-    <div><!--card 1-->  
+  <div id="cast-box">
+  <h3>Featured Cast</h3>
+
+  <mat-grid-list cols="3">
+    <mat-grid-tile colspan="1" class="script-menu"> 
       <img [src]='show.castImage1'><br>
+    <mat-grid-tile-footer class>
       <h3><a [href]='show.castLink1'>{{show.castName1}}</a></h3>
-    </div>
-    <div><!--card 2-->  
+    </mat-grid-tile-footer> 
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" class="script-menu">
       <img [src]='show.castImage2'><br>
-      <h3><a [href]='show.castLink2'>{{show.castName2}}</a></h3>
-    </div>
-    <div><!--card 3-->  
+      <h4><a [href]='show.castLink2'>{{show.castName2}}</a></h4>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" class="script-menu">
       <img [src]='show.castImage3'><br>
-      <h3><a [href]='show.castLink3'>{{show.castName3}}</a></h3>
-    </div>
-    <div><!--card 4-->  
+      <h4><a [href]='show.castLink3'>{{show.castName3}}</a></h4>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" class="script-menu">
       <img [src]='show.castImage4'><br>
-      <h3><a [href]='show.castLink4'>{{show.castName4}}</a></h3><br>
-    </div>
+      <h4><a [href]='show.castLink4'>{{show.castName4}}</a></h4><br>
+    </mat-grid-tile>
+  </mat-grid-list>
   </div>
+
 </div>

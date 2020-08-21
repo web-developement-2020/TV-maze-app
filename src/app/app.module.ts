@@ -25,10 +25,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 
 import { HeaderComponent } from './header/header.component';
 import { MatButtonModule } from '@angular/material/button';
-
-
 import { FakeSearchResultsComponent } from './fake-search-results/fake-search-results.component';
-import { MatExpansionModule } from '@angular/material/expansion';
 import {MatGridListModule} from '@angular/material/grid-list';
 
 import { DatePipe} from '@angular/common';
