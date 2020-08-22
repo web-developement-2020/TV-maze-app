@@ -1,4 +1,4 @@
-<div class="container-div">
+<div id="container-div">
   <div> 
     <img [src]='show.showImage' />
   </div> 
@@ -16,26 +16,26 @@
     <div  id="summary" [innerHTML]="show.summary"></div>
   </div>
 
-  <div id="cast-box">
-  <h3>Featured Cast</h3>
+  <div id="cast-header">
+    <h3>Featured Cast</h3>
+  </div>
+  <div id="cast-box"
+    fxLayout="row wrap"
+    fxLayoutAlign="space-around center"
+    fxGap="15px">
 
-  <mat-grid-list cols="3">
-    <mat-grid-tile colspan="1" class="script-menu"> 
-      <img [src]='show.castImage1'><br>
-      <h3><a [href]='show.castLink1'>{{show.castName1}}</a></h3>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="1" class="script-menu">
-      <img [src]='show.castImage2'><br>
+    <div fxFlex class="cast-member">
+      <img [src]='show.castImage1' class="cast-image"><span>
+      <h4><a [href]='show.castLink1'>{{show.castName1}}</a></h4></span>
+    </div>
+    <div fxFlex class="cast-member">      <img [src]='show.castImage2'class="cast-image"><br>
       <h4><a [href]='show.castLink2'>{{show.castName2}}</a></h4>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="1" class="script-menu">
-      <img [src]='show.castImage3'><br>
+    </div>
+    <div fxFlex class="cast-member">      <img [src]='show.castImage3'class="cast-image"><br>
       <h4><a [href]='show.castLink3'>{{show.castName3}}</a></h4>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="1" class="script-menu">
-      <img [src]='show.castImage4'><br>
+    </div>
+    <div fxFlex class="cast-member">      <img [src]='show.castImage4'class="cast-image"><br>
       <h4><a [href]='show.castLink4'>{{show.castName4}}</a></h4><br>
-    </mat-grid-tile>
-  </mat-grid-list>
+    </div>
   </div>
 </div>
