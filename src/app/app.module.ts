@@ -33,6 +33,7 @@ import { DatePipe} from '@angular/common';
     DisplayPageComponent,
     ],
 
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -58,5 +59,6 @@ import { DatePipe} from '@angular/common';
     DatePipe],
 
  bootstrap: [AppComponent],
+
 })
 export class AppModule {}

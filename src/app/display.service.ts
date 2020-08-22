@@ -9,6 +9,12 @@ import { DatePipe } from '@angular/common';
   providedIn: 'root'
 })
 
+// class dateFormat{
+//   constructor(public datePipe : DatePipe){ }
+//   myFunction(date : Date){
+//     date =new Date();
+//     let latest_date = this.datePipe.transform(date,'YYYY-DD-MM');
+//   } }
 
 export class DisplayService {
 

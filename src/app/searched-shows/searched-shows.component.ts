@@ -11,9 +11,9 @@ export class SearchedShowsComponent implements OnInit {
 
 
   @Input() shows: IShow[];
+  @Input() showDetail: IShow;
+
   constructor() {}
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 }

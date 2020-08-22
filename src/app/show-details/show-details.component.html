@@ -1,41 +1,47 @@
-<div id="container-div">
+<div id="container-div" *ngIf= "showDetail">
+    
   <div> 
-    <img [src]='show.showImage' />
+   <!-- <img [src]='showDetail.image' />--> 
+    (IMAGE HERE)
   </div> 
   <div id="details-box"> 
-    <div><h2>{{show.showTitle}}</h2></div>
-    <div class="sm-detail"><span class="label">Rating:</span>{{show.rating}}/10</div>
-    <div class="sm-detail"><span class="label" >Showing on:</span> {{show.channel}}</div>
+    <div><h2>{{showDetail.name}}</h2></div>
+    <div class="sm-detail"><span class="label">Rating
+      :</span>(Pull in .svg from other pages){{show.rating}}/10</div>
+    
   </div>
 
   <div id="details-box-2"></div>
+    <div class="sm-detail"><span class="label" >Showing on:</span> {{showDetail.network_name}}</div>
+    <div class="sm-detail"><span class="label">Schedule:</span>{{showDetail.schedule_time}} on <div>days {{showDetail.schedule_days}}.</div>
     <div class="sm-detail"><span class="label">Genre:</span> {{show.genre}}</div>
-    <div class="sm-detail"><span class="label">Language:</span> {{show.language}}</div>
+    <div class="sm-detail"><span class="label">Language: </span> {{show.language}}</div>
     <div class="sm-detail"><span class="label">First Aired:</span> {{show.premierDate}}</div>
     <div id="small-detail"><span class="label"><a [href]="show.previousEpisode">Most recent episode</a></span>
-    <div  id="summary" [innerHTML]="show.summary"></div>
+    <div id="summary" [innerHTML]="showDetail.summary"></div>
   </div>
 
   <div id="cast-header">
     <h3>Featured Cast</h3>
-  </div>
+
   <div id="cast-box"
     fxLayout="row wrap"
     fxLayoutAlign="space-around center"
     fxGap="15px">
-
+    
     <div fxFlex class="cast-member">
-      <img [src]='show.castImage1' class="cast-image"><span>
-      <h4><a [href]='show.castLink1'>{{show.castName1}}</a></h4></span>
+          <div *ngFor="let cast of showDetail._embedded.cast">
+      
+      <div>name: {{cast.name}}</div>
+      <!-- <div>country: {{cast.country}}</div> -->
+        <div>{{cast._links}}</div>
+        <div>{{cast.url}}</div>
+        <div>{{cast.gender}}</div>
+
+      <div><img src="{{cast.image}}" />image</div>
     </div>
-    <div fxFlex class="cast-member">      <img [src]='show.castImage2'class="cast-image"><br>
-      <h4><a [href]='show.castLink2'>{{show.castName2}}</a></h4>
-    </div>
-    <div fxFlex class="cast-member">      <img [src]='show.castImage3'class="cast-image"><br>
-      <h4><a [href]='show.castLink3'>{{show.castName3}}</a></h4>
-    </div>
-    <div fxFlex class="cast-member">      <img [src]='show.castImage4'class="cast-image"><br>
-      <h4><a [href]='show.castLink4'>{{show.castName4}}</a></h4><br>
+  </div>
+
     </div>
   </div>
 </div>
