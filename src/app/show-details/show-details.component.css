@@ -1,0 +1,45 @@
+#container-div{
+  background: #f1faee;
+  width: 90vw;
+  margin: 15px auto 20px auto;
+  border: black;
+  box-shadow: 2px 4px #F1FAEE;
+  padding: 10px
+}
+
+img{
+  height: 205px;
+  width: auto;
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+#cast-header h3{
+  font-weight: bold;
+}
+.cast-member{
+  display: block;
+}
+
+.cast-member a{
+  color: #457b9d;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* #details-box-2{
+  clear: both;
+} */
+
+.label{
+  font-weight: bold;
+}
+
+div {
+  margin:5px;
+}
+
+#summary{
+  margin-top: 10px;
+}
