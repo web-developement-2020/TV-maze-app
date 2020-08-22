@@ -1,37 +1,69 @@
+<!-- Teal: For your reference 
+    <div *ngIf= "showDetail">
+    <div>{{showDetail.name}}</div>
+    <br>
+    <div [innerHTML]="showDetail.shortSummary"></div>
+    <div>{{showDetail.name}}</div>
+
+  </div>
+-->
+
+ <div *ngIf= "showDetail">
+    <div>{{showDetail.name}}</div>
+    
+    <div [innerHTML]="showDetail.summary"></div>
+<div>schedule {{showDetail.schedule_time}}</div>
+<div>days {{showDetail.schedule_days}}</div>
+<div>network {{showDetail.network_name}}</div>
+    <div>{{showDetail.name}}</div>
+    <div *ngFor="let cast of showDetail._embedded.cast">
+      
+      <div>name: {{cast.name}}</div>
+      <!-- <div>country: {{cast.country}}</div> -->
+        <div>{{cast._links}}</div>
+        <div>{{cast.url}}</div>
+        <div>{{cast.gender}}</div>
+
+      <div><img src="{{cast.image}}" />image</div>
+    </div>
+  </div>
+
+
 <div>
   <div> <!--image div-->
-    <img [src]='show.showImage' />
+    <!-- <img [src]='show.showImage' /> -->
   </div>
   <div> <!--right info div-->
-    <p><h2><a [href]="show.showLink">{{show.showTitle}}</a></h2>
+    <!-- <p><h2><a [href]="show.showLink">{{show.showTitle}}</a></h2>
     <p><h3>Rating:</h3>{{show.rating}}/10
     <p><h3>Showing on:</h3> {{show.channel}} in {{show.country}}
     <p><h3>Genre:</h3> {{show.genre}}
     <p><h3>Language:</h3> {{show.language}}
     <p><h3>First Aired:</h3> {{show.premierDate}}
-  </div>
-  <div> <!--summary div-->
-    <p><a [href]="show.previousEpisode">Most recent episode</a></p>
-    <p><h3>Show Summary:</h3> {{show.summary}}
+  </div> -->
+  <div> 
+    <!--summary div-->
+    <!-- <p><a [href]="show.previousEpisode">Most recent episode</a></p> -->
+    <!-- <p><h3>Show Summary:</h3> {{show.summary}} -->
   </div>
 
   <div><!--cast row-->
-  <h2>Featured Cast</h2>
+  <!-- <h2>Featured Cast</h2> -->
     <div><!--card 1-->  
-      <img [src]='show.castImage1'><br>
-      <h3><a [href]='show.castLink1'>{{show.castName1}}</a></h3>
+      <!-- <img [src]='show.castImage1'><br> -->
+      <!-- <h3><a [href]='show.castLink1'>{{show.castName1}}</a></h3> -->
     </div>
     <div><!--card 2-->  
-      <img [src]='show.castImage2'><br>
-      <h3><a [href]='show.castLink2'>{{show.castName2}}</a></h3>
+      <!-- <img [src]='show.castImage2'><br> -->
+      <!-- <h3><a [href]='show.castLink2'>{{show.castName2}}</a></h3> -->
     </div>
     <div><!--card 3-->  
-      <img [src]='show.castImage3'><br>
-      <h3><a [href]='show.castLink3'>{{show.castName3}}</a></h3>
+      <!-- <img [src]='show.castImage3'><br> -->
+      <!-- <h3><a [href]='show.castLink3'>{{show.castName3}}</a></h3> -->
     </div>
     <div><!--card 4-->  
-      <img [src]='show.castImage4'><br>
-      <h3><a [href]='show.castLink4'>{{show.castName4}}</a></h3><br>
+      <!-- <img [src]='show.castImage4'><br> -->
+      <!-- <h3><a [href]='show.castLink4'>{{show.castName4}}</a></h3><br> -->
     </div>
   </div>
 </div>

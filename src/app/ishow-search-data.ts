@@ -10,8 +10,8 @@ export interface IShowSearchData {
       average: number;
     };
     image: {
-      medium: string | any;
-      original: string | any;
+      medium: string;
+      original: string;
     };
     summary: string;
   };

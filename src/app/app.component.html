@@ -24,10 +24,23 @@
 <app-header (searchEvent)=goSearch($event)> </app-header> 
 <app-searched-shows [shows]="shows"></app-searched-shows>
 <main>
-<app-fake-search-results></app-fake-search-results>
+
+  <div *ngIf="!showDetail">
+  <app-display-page
+    [shows]="shows"
+    [showsByDate]="showsByDate"
+    [showDetail]="showDetail"
+    (getDetailEvent)="getShowDetail($event)"
+  ></app-display-page>
+</div>
+<div *ngIf="!shows">
+  <app-show-details [showDetail]="showDetail"></app-show-details>
+</div>
+
+<!-- <app-fake-search-results></app-fake-search-results>
 
 <app-display-page></app-display-page>
-</main>
+</main> -->
     
 <footer><i>Created by Kanchan Sharma, Lishitha Karnati, Juyean Lee, and Teal Larson. 2020.</i></footer>
 

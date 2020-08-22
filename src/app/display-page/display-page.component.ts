@@ -1,23 +1,29 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IDisplayPage } from '../idisplay-page'
 import { DisplayService } from '../display.service';
+import { IShow } from '../ishow';
+
 
 @Component({
   selector: 'app-display-page',
   templateUrl: './display-page.component.html',
-  styleUrls: ['./display-page.component.css']
+  styleUrls: ['./display-page.component.css'],
 })
 export class DisplayPageComponent implements OnInit {
-  
-@Input() date:Date;
- current : IDisplayPage
-  constructor(private dispalyService:DisplayService) { 
-    
-  }
-  
+  @Output() getDetailEvent = new EventEmitter<number>();
+
+  @Input() date: Date;
+  @Input() showsByDate: IShow[];
+  @Input() shows: IShow[];
+  @Input() showDetail: IShow;
+  current: IDisplayPage;
+  constructor() {}
 
   ngOnInit(): void {
-    this.dispalyService.getDisplayPage(new Date).subscribe(data =>this.current = data)
+    // this.dispalyService.getDisplayPage(new Date).subscribe(data =>this.current = data)
   }
 
+  getDetail(id): void {
+    return this.getDetailEvent.emit(id);
+  }
 }
