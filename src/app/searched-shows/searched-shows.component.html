@@ -30,7 +30,7 @@
                       /></svg
                     ><span id="rating-score">{{ el.rating }}</span>
                   </div>
-                  <div id="premiered">{{ el.premiered }}</div>
+                  <div id="premiered">{{ el.premiered | date:longDate}}</div>
                   <div id="language">{{ el.language }}</div>
                   <div id="genres">{{ el.genres }}</div>
                 </div>

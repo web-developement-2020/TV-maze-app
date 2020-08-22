@@ -26,13 +26,10 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { HeaderComponent } from './header/header.component';
 import { MatButtonModule } from '@angular/material/button';
 
-
 import { FakeSearchResultsComponent } from './fake-search-results/fake-search-results.component';
-import { MatExpansionModule } from '@angular/material/expansion';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
 
-import { DatePipe} from '@angular/common';
-
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -45,8 +42,7 @@ import { DatePipe} from '@angular/common';
 
     ShowDetailsComponent,
     DisplayPageComponent,
-    FakeSearchResultsComponent
-
+    FakeSearchResultsComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,12 +62,8 @@ import { DatePipe} from '@angular/common';
 
     MatExpansionModule,
     MatButtonModule,
-
-  providers: [
-    DisplayService,
-    ShowService,
-    SearchService,
-    DatePipe],
- bootstrap: [AppComponent],
+  ],
+  providers: [DisplayService, ShowService, SearchService, DatePipe],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

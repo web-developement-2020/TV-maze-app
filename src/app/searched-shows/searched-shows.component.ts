@@ -9,9 +9,9 @@ export class SearchedShowsComponent implements OnInit {
   panelOpenState = false;
 
   @Input() shows: IShow[];
+  @Input() showDetail: IShow;
+
   constructor() {}
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 }

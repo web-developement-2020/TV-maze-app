@@ -1,6 +1,35 @@
-<div>
+<!-- <div>
 <div>
   <img [src] ='current.image'/><br />
  <a [href] = 'current.url'> <span>{{current.name}}</span></a>
 </div>
-</div>  
+</div>   -->
+
+<!-- Teal : Feel free to change the look!!! -->
+
+<div
+  fxFlex
+  fxLayoutAlign="center"
+  class="container"
+  *ngIf="showsByDate && !shows"
+>
+  <div fxLayout="row wrap" fxLayoutGap="20px grid">
+    <div
+      fxFlex="20%"
+      fxFlex.xs="100%"
+      fxFlex.sm="50%"
+      fxFlex.md="33%"
+      *ngFor="let show of showsByDate"
+      id="card-container"
+    >
+      <mat-card class="mat-elevation-z4" (click)="getDetail(show.id)">
+        <mat-card-header>
+          <mat-card-title>{{ show.name }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="{{ show.image }}" />
+        <mat-card-content [innerHTML]="show.shortSummary">
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
