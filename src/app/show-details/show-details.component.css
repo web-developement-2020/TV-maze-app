@@ -1,11 +1,33 @@
+#container-div{
+  background: #f1faee;
+  width: 90%;
+  margin-left: auto;
+  margin-right:auto;
+}
 img{
-  height: 100px;
+  height: 205px;
   width: auto;
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+mat-grid-tile .script-menu{
+  text-align: center;
+}
+
+/* #details-box-2{
   clear: both;
+} */
+
+.label{
+  font-weight: bold;
 }
 
-.script-menu >:host .mat-figure {
-  height: 125px;
+div {
+  margin:5px;
 }
 
-
+#summary{
+  margin-top: 10px;
+}

@@ -1,18 +1,19 @@
-<div>
-  <!-- <div> 
+<div class="container-div">
+  <div> 
     <img [src]='show.showImage' />
-  </div> -->
-  <div> <!--right info div-->
-    <p><h2><a [href]="show.showLink">{{show.showTitle}}</a></h2>
-    <p><h3>Rating:</h3>{{show.rating}}/10
-    <p><h3>Showing on:</h3> {{show.channel}} in {{show.country}}
-    <p><h3>Genre:</h3> {{show.genre}}
-    <p><h3>Language:</h3> {{show.language}}
-    <p><h3>First Aired:</h3> {{show.premierDate}}
+  </div> 
+  <div id="details-box"> 
+    <div><h2>{{show.showTitle}}</h2></div>
+    <div class="sm-detail"><span class="label">Rating:</span>{{show.rating}}/10</div>
+    <div class="sm-detail"><span class="label" >Showing on:</span> {{show.channel}}</div>
   </div>
-  <div> <!--summary div-->
-    <p><a [href]="show.previousEpisode">Most recent episode</a></p>
-    <p><h3>Show Summary:</h3> {{show.summary}}
+
+  <div id="details-box-2"></div>
+    <div class="sm-detail"><span class="label">Genre:</span> {{show.genre}}</div>
+    <div class="sm-detail"><span class="label">Language:</span> {{show.language}}</div>
+    <div class="sm-detail"><span class="label">First Aired:</span> {{show.premierDate}}</div>
+    <div id="small-detail"><span class="label"><a [href]="show.previousEpisode">Most recent episode</a></span>
+    <div  id="summary" [innerHTML]="show.summary"></div>
   </div>
 
   <div id="cast-box">
@@ -21,9 +22,7 @@
   <mat-grid-list cols="3">
     <mat-grid-tile colspan="1" class="script-menu"> 
       <img [src]='show.castImage1'><br>
-    <mat-grid-tile-footer class>
       <h3><a [href]='show.castLink1'>{{show.castName1}}</a></h3>
-    </mat-grid-tile-footer> 
     </mat-grid-tile>
     <mat-grid-tile colspan="1" class="script-menu">
       <img [src]='show.castImage2'><br>
@@ -39,5 +38,4 @@
     </mat-grid-tile>
   </mat-grid-list>
   </div>
-
 </div>

@@ -1,57 +1,59 @@
 .flex-container {
+  background: #1D3557; 
   display: flex;
+  flex: auto;
   align-items: stretch;
-  background-color: #EBF4F5;
   align-items: baseline;
-  
+  margin-bottom: 0;
+  margin-top: 0;
 }
+
+
 .flex-container > div {
   margin-top: 10px;
 }
 .title{
   flex-grow: 1;
-  font-size:20px;
-  text-align:left;
-  color:#1e4278;
-  color:#9b0404;
-
-  vertical-align: bottom;
+  font-size:2em;
+  text-align: center;
+  color:#a8dadc;
+  
   
 }
-.title span {
-  color:#626262;
-  font-size:18px;
-  font-weight: bold;
+.title h1 {
+  color:#f1faee;
+  font-size:.8em;
+  font-family: 'Proza Libre', sans-serif;
+  font-weight: 700;
   vertical-align: bottom;
 }
 
 .search-form{
   flex-grow:1;
   flex-basis: auto;
-  color:#576e91;
-  font-size:10px;
+  font-size:1.1em;
+  color: f1faee;
 }
+
 .search-field{
-  width:150px;
+  width:175px;
+  color: #f1faee;
+
 }
 
-button:focus{
+button{
+  color: #f1faee;
+}
+
+button:focus {
   outline:none;
-  border:1#576e91;
+  border:#576e91;
 }
 
-.flex-container{
-  flex: auto;
-  background-color: #deecee;
-  color: #626262;
-  font-size:11px;
-  margin-bottom: 0;
-  margin-top: 0;
-}
-
+/* 
 .mat-input-element {
     caret-color: #b87bd3;
-}
+} */
 
 
 .search-field[_ngcontent-bpj-c106] {
