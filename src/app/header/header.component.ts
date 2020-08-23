@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
+import {Location} from '@angular/common';
+import { HAMMER_LOADER } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-header',
@@ -11,11 +13,15 @@ export class HeaderComponent implements OnInit {
   @Output() searchEvent = new EventEmitter<string>();
 
   search = new FormControl();
-  constructor() {}
-
+  refreshPage() {
+    window.location.reload();
+     }
+  constructor(private location: Location) {}
+  
   ngOnInit(): void {
     this.search.valueChanges
       .pipe(debounceTime(1000))
       .subscribe((data) => this.searchEvent.emit(data));
+
   }
 }
