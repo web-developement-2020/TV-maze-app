@@ -1,35 +1,54 @@
-<!-- <div>
-<div>
-  <img [src] ='current.image'/><br />
- <a [href] = 'current.url'> <span>{{current.name}}</span></a>
-</div>
-</div>   -->
-
-<!-- Teal : Feel free to change the look!!! -->
 
 <div
   fxFlex
   fxLayoutAlign="center"
   class="container"
-  *ngIf="showsByDate && !shows"
->
-  <div fxLayout="row wrap" fxLayoutGap="20px grid">
+  *ngIf="showsByDate && !shows">
+
+  <div fxLayout="row wrap" fxLayoutGap="1em grid">
     <div
       fxFlex="20%"
       fxFlex.xs="100%"
       fxFlex.sm="50%"
       fxFlex.md="33%"
       *ngFor="let show of showsByDate"
-      id="card-container"
-    >
-      <mat-card class="mat-elevation-z4" (click)="getDetail(show.id)">
+      id="card-container">
+
+    <mat-card class="mat-elevation-z4" (click)="getDetail(show.id)">
+      
         <mat-card-header>
-          <mat-card-title>{{ show.name }}</mat-card-title>
+            <mat-card-title style="width: 100%" id="show-title">{{ show.name }}</mat-card-title>
         </mat-card-header>
-        <img mat-card-image src="{{ show.image }}" />
-        <mat-card-content [innerHTML]="show.shortSummary">
-        </mat-card-content>
-      </mat-card>
-    </div>
+            <img mat-card-image src="{{ show.image }}" />
+    </mat-card> 
+
+<!--           
+             <div id="rating">
+                <svg
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  class="bi bi-star-fill"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg><span id="rating-score">{{ el.rating }}</span>
+              </div>
+
+
+
+              <div id="premiered"></div>
+              <div id="language">{{ show.language }}</div>
+              <div class="sm-detail" id="genres">{{ show.genres }}</div>
+
+              <div class="sm-detail" id="premiered"><span class=label>First Aired:</span>{{ show.premiered}}</div>
+
+              <div class="sm-detail" id="schedule"><span class="label">Airs at:</span> {{showD.time}} on  {{showD.days}}</div>
+
+              <div class="sm-detail" id="channel"><span class="label">Watch it on:</span>{{showD.channel}}</div>
+
+            <div id="summary" [innerHTML]="show.summary"></div>
+       
+    </div> -->
   </div>
 </div>

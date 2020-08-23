@@ -33,6 +33,7 @@ export class AppComponent {
       this.shows = data;
     });
   }
+  
   getShowDetail(id: number) {
     return this.showsService.getShowById(id).subscribe((data) => {
       this.showDetail = data;
@@ -41,7 +42,7 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.showsService.getShowByDate().subscribe((data) => {
-      this.showsByDate = data.slice(7,13);
+      this.showsByDate = data.slice(7,12);
     });
   }
 }
