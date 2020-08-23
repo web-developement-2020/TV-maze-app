@@ -14,7 +14,7 @@
                   </div>
                   <div class="media-header">
                     <div id="name">{{ el.name }}</div>
-                    <div id="rating">
+                    <div id="rating" *ngIf="el.rating">
                       <svg
                         width="1em"
                         height="1em"
