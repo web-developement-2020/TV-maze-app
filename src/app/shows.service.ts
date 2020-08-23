@@ -6,8 +6,8 @@ import { IShowSearchData } from './ishow-search-data';
 import { IShowDetailData } from './ishow-detail-data';
 import { IShowDetail } from './ishow-detail';
 import { map } from 'rxjs/operators';
-import{ICast} from './icast';
-import{ICastData} from './icast-data';
+import { ICast } from './icast';
+import { ICastData } from './icast-data';
 
 @Injectable({
   providedIn: 'root',
@@ -53,14 +53,14 @@ export class ShowsService {
       );
   }
 
-  toShortName(name: string) {
+  private toShortName(name: string) {
     let shortName;
     if (name) {
       return (shortName = name.length > 20 ? name.slice(0, 20) + '...' : name);
     }
   }
 
-  toShortSummary(summary: string) {
+  private toShortSummary(summary: string) {
     let shortSummary;
     let sum;
     // console.log(shows.show.summary);
@@ -68,7 +68,7 @@ export class ShowsService {
     return (shortSummary =
       sum.length < 19 ? sum.join(' ') : sum.slice(0, 19).join(' ') + '...</p>');
   }
-  getImage(image: any) {
+  private getImage(image: any) {
     let isImage;
 
     return (isImage = image
@@ -76,35 +76,37 @@ export class ShowsService {
       : 'http://static.tvmaze.com/images/no-img/no-img-portrait-text.png');
   }
 
-  getCast(cast:[]):[] {
+  private getCast(cast: []): [] {
     let item;
-    item= cast.map(data => this.transfromToCast(data));
+    item = cast.map((data) => this.transfromToCast(data));
     return item;
   }
-  
-  isCountry(item){
+
+  private isCountry(item) {
     let country;
-    return country = item? item.name : 'unknown'; 
-    }
-  
-
-  transfromToCast(data:ICastData):ICast{
-  return{
-
-        id: data.person.id,
-        url:data.person.url,
-        name:data.person.name,
-        country:this.isCountry(data.person.country),
-        birthday:data.person.birthday,
-        gender:data.person.gender,
-        image:this.getImage(data.person.image),
-         _links:data.person._links.self.href 
-      }
+    return (country = item ? item.name : null);
   }
 
+  private isNull(item) {
+    let notNull;
+    return (notNull = item ? item.name : null);
+  }
 
-  transformToShowsByDate(showsByDate: IShowSearchData): IShow {
-        return {
+  private transfromToCast(data: ICastData): ICast {
+    return {
+      id: data.person.id,
+      url: data.person.url,
+      name: data.person.name,
+      country: this.isCountry(data.person.country),
+      birthday: data.person.birthday,
+      gender: data.person.gender,
+      image: this.getImage(data.person.image),
+      _links: data.person._links.self.href,
+    };
+  }
+
+  private transformToShowsByDate(showsByDate: IShowSearchData): IShow {
+    return {
       id: showsByDate.show.id,
       name: showsByDate.show.name,
       shortName: this.toShortName(showsByDate.show.name),
@@ -116,10 +118,13 @@ export class ShowsService {
       image: this.getImage(showsByDate.show.image),
       summary: showsByDate.show.summary,
       shortSummary: this.toShortSummary(showsByDate.show.summary),
+      schedule_time: showsByDate.show.schedule.time,
+      schedule_days: showsByDate.show.schedule.days,
+      network: this.isNull(showsByDate.show.network),
     };
   }
 
-  transformToIShow(item: IShowData): IShow {
+  private transformToIShow(item: IShowData): IShow {
     return {
       id: item.id,
       name: item.name,
@@ -132,10 +137,14 @@ export class ShowsService {
       image: item.image.medium,
       summary: item.summary,
       shortSummary: item.summary,
+      schedule_time: '',
+      schedule_days: [],
+      network: '',
     };
   }
 
-  transformToSeachShows(shows: IShowSearchData): IShow {
+  private transformToSeachShows(shows: IShowSearchData): IShow {
+
     return {
       id: shows.show.id,
       name: shows.show.name,
@@ -148,6 +157,9 @@ export class ShowsService {
       image: this.getImage(shows.show.image),
       summary: shows.show.summary,
       shortSummary: this.toShortName(shows.show.summary),
+      schedule_time: shows.show.schedule.time,
+      schedule_days: shows.show.schedule.days,
+      network: this.isNull(shows.show.network),
     };
   }
 
@@ -155,7 +167,7 @@ export class ShowsService {
   // https://api.tvmaze.com/shows/1/images
   // `http://api.tvmaze.com/shows/${item.id}/images`;
 
-  transformToShowDetail(detail: IShowDetailData): IShowDetail {
+  private transformToShowDetail(detail: IShowDetailData): IShowDetail {
     return {
       id: detail.id,
       name: detail.name,
@@ -168,8 +180,8 @@ export class ShowsService {
       officialSite: detail.officialSite,
       schedule_time: detail.schedule.time,
       schedule_days: detail.schedule.days,
-      rating: detail.rating,
-      network_name:detail.network.name,
+      rating: detail.rating.average,
+      network_name: this.isNull(detail.network),
       image: this.getImage(detail.image),
       summary: detail.summary,
       shortSummary: this.toShortSummary(detail.summary),

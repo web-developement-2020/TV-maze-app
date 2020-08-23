@@ -34,14 +34,14 @@
             
             <div class="media-body" id="details-box">
   
-              <div class="sm-detail" id="genres">{{ el.genres }}</div>
-              <div class="sm-detail" id="premiered"><span class=label>First Aired:</span>{{ el.premiered}}</div>
+              <div class="sm-detail" id="genres"><span class="label">Genres: </span>{{ el.genres }}</div>
+              <div class="sm-detail" id="premiered"><span class=label>First Aired: </span>{{ el.premiered}}</div>
   
-              <div class="sm-detail" id="schedule"><span class="label">Airs at:</span> (time) on (day) </div>
+              <div class="sm-detail" id="schedule"><span class="label">Airs at: </span> {{el.schedule_time}} on {{el.schedule_days}} </div>
   
-              <div class="sm-detail" id="network"><span class="label">Watch it on:</span> (network-name) </div>
+              <div class="sm-detail" id="network"><span class="label">Watch it on: </span> {{el.network}} </div>
   
-            <div  id="summary" [innerHTML]="showDetail.summary"></div>
+            <div  id="summary" [innerHTML]="el.summary"></div>
   
           </div>
           </mat-expansion-panel>
