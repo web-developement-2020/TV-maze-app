@@ -4,15 +4,18 @@ import { IDisplayPageData } from './idisplay-page-data';
 import { IDisplayPage} from './idisplay-page';
 import { map } from 'rxjs/operators';
 import { DatePipe } from '@angular/common';
+
 @Injectable({
   providedIn: 'root'
 })
-class dateFormat{
-  constructor(public datePipe : DatePipe){ }
-  myFunction(date : Date){
-    date =new Date();
-    let latest_date = this.datePipe.transform(date,'YYYY-DD-MM');
-  } }
+
+// class dateFormat{
+//   constructor(public datePipe : DatePipe){ }
+//   myFunction(date : Date){
+//     date =new Date();
+//     let latest_date = this.datePipe.transform(date,'YYYY-DD-MM');
+//   } }
+
 export class DisplayService {
 
   constructor(private httpClient : HttpClient) { }

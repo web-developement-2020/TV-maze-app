@@ -1,5 +1,20 @@
-footer{
-  text-align: center;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  color: grey;
+* {
+  box-sizing: border-box;
 }
+#container-div{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#details-box div{
+  margin: 5px;
+}
+
+.label{
+  font-weight: bold;
+}
+
+.sm-detail{
+  clear: both;
+}
+  

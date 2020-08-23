@@ -1,37 +1,47 @@
-<div>
-  <div> <!--image div-->
-    <img [src]='show.showImage' />
-  </div>
-  <div> <!--right info div-->
-    <p><h2><a [href]="show.showLink">{{show.showTitle}}</a></h2>
-    <p><h3>Rating:</h3>{{show.rating}}/10
-    <p><h3>Showing on:</h3> {{show.channel}} in {{show.country}}
-    <p><h3>Genre:</h3> {{show.genre}}
-    <p><h3>Language:</h3> {{show.language}}
-    <p><h3>First Aired:</h3> {{show.premierDate}}
-  </div>
-  <div> <!--summary div-->
-    <p><a [href]="show.previousEpisode">Most recent episode</a></p>
-    <p><h3>Show Summary:</h3> {{show.summary}}
+<div id="container-div" *ngIf= "showDetail">
+    
+  <div> 
+   <!-- <img [src]='showDetail.image' />--> 
+    (IMAGE HERE)
+  </div> 
+  <div id="details-box"> 
+    <div><h2>{{showDetail.name}}</h2></div>
+    <div class="sm-detail"><span class="label">Rating
+      :</span>(Pull in .svg from other pages){{show.rating}}/10</div>
+    
   </div>
 
-  <div><!--cast row-->
-  <h2>Featured Cast</h2>
-    <div><!--card 1-->  
-      <img [src]='show.castImage1'><br>
-      <h3><a [href]='show.castLink1'>{{show.castName1}}</a></h3>
+  <div id="details-box-2"></div>
+    <div class="sm-detail"><span class="label" >Showing on:</span> {{showDetail.network_name}}</div>
+    <div class="sm-detail"><span class="label">Schedule:</span>{{showDetail.schedule_time}} on <div>days {{showDetail.schedule_days}}.</div>
+    <div class="sm-detail"><span class="label">Genre:</span> {{show.genre}}</div>
+    <div class="sm-detail"><span class="label">Language: </span> {{show.language}}</div>
+    <div class="sm-detail"><span class="label">First Aired:</span> {{show.premierDate}}</div>
+    <div id="small-detail"><span class="label"><a [href]="show.previousEpisode">Most recent episode</a></span>
+    <div id="summary" [innerHTML]="showDetail.summary"></div>
+  </div>
+
+  <div id="cast-header">
+    <h3>Featured Cast</h3>
+
+  <div id="cast-box"
+    fxLayout="row wrap"
+    fxLayoutAlign="space-around center"
+    fxGap="15px">
+    
+    <div fxFlex class="cast-member">
+          <div *ngFor="let cast of showDetail._embedded.cast">
+      
+      <div>name: {{cast.name}}</div>
+      <!-- <div>country: {{cast.country}}</div> -->
+        <div>{{cast._links}}</div>
+        <div>{{cast.url}}</div>
+        <div>{{cast.gender}}</div>
+
+      <div><img src="{{cast.image}}" />image</div>
     </div>
-    <div><!--card 2-->  
-      <img [src]='show.castImage2'><br>
-      <h3><a [href]='show.castLink2'>{{show.castName2}}</a></h3>
-    </div>
-    <div><!--card 3-->  
-      <img [src]='show.castImage3'><br>
-      <h3><a [href]='show.castLink3'>{{show.castName3}}</a></h3>
-    </div>
-    <div><!--card 4-->  
-      <img [src]='show.castImage4'><br>
-      <h3><a [href]='show.castLink4'>{{show.castName4}}</a></h3><br>
+  </div>
+
     </div>
   </div>
 </div>
