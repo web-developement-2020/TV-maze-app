@@ -10,4 +10,7 @@ export interface IShow {
   image: string;
   summary: string;
   shortSummary: string;
+  schedule_time: string;
+  schedule_days:[];
+  network: string;
 }
