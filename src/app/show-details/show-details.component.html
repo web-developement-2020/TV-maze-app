@@ -1,26 +1,36 @@
 <div id="container-div" *ngIf= "showDetail">
     
   <div> 
-   <!-- <img [src]='showDetail.image' />--> 
-    (IMAGE HERE)
+   <img [src]='showDetail.image' /> 
   </div> 
   <div id="details-box"> 
     <div><h2>{{showDetail.name}}</h2></div>
-    <div class="sm-detail"><span class="label">Rating
-      :</span>(Pull in .svg from other pages){{show.rating}}/10</div>
+    <div class="sm-detail"> 
+    <!-- *ngIf="rating"> -->
+      <span class="label">Rating
+      :</span><svg
+      width="1em"
+      height="1em"
+      viewBox="0 0 16 16"
+      class="bi bi-star-fill"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg><span>{{showDetail.rating}}</span>/10</div>
     
   </div>
 
   <div id="details-box-2"></div>
     <div class="sm-detail"><span class="label" >Showing on:</span> {{showDetail.network_name}}</div>
     <div class="sm-detail"><span class="label">Schedule:</span>{{showDetail.schedule_time}} on <div>days {{showDetail.schedule_days}}.</div>
-    <div class="sm-detail"><span class="label">Genre:</span> {{show.genre}}</div>
-    <div class="sm-detail"><span class="label">Language: </span> {{show.language}}</div>
-    <div class="sm-detail"><span class="label">First Aired:</span> {{show.premierDate}}</div>
-    <div id="small-detail"><span class="label"><a [href]="show.previousEpisode">Most recent episode</a></span>
+    <div class="sm-detail"><span class="label">Genre:</span> {{showDetail.genres}}</div>
+    <div class="sm-detail"><span class="label">Language: </span> {{showDetail.language}}</div>
+    <div class="sm-detail"><span class="label">First Aired:</span> {{showDetail.premiered}}</div>
+    
     <div id="summary" [innerHTML]="showDetail.summary"></div>
   </div>
 
+  <!-- <ng-template *ngIf="cast"> -->
   <div id="cast-header">
     <h3>Featured Cast</h3>
 
@@ -31,17 +41,15 @@
     
     <div fxFlex class="cast-member">
           <div *ngFor="let cast of showDetail._embedded.cast">
-      
-      <div>name: {{cast.name}}</div>
-      <!-- <div>country: {{cast.country}}</div> -->
-        <div>{{cast._links}}</div>
-        <div>{{cast.url}}</div>
-        <div>{{cast.gender}}</div>
-
-      <div><img src="{{cast.image}}" />image</div>
+      <div fxFlex>
+        <div fxLayout="column">
+         <div fxFlex id="cast-name"><a [href]='cast.url'> {{cast.name}}</a></div>
+        <div id="cast-image"><img src="{{cast.image}}" /></div>
+    </div>
     </div>
   </div>
 
     </div>
   </div>
+<!-- </ng-template> -->
 </div>
