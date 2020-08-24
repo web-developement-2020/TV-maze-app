@@ -63,10 +63,16 @@ export class ShowsService {
   private toShortSummary(summary: string) {
     let shortSummary;
     let sum;
-    // console.log(shows.show.summary);
-    sum = summary.split('</p>')[0].split(' ');
-    return (shortSummary =
-      sum.length < 19 ? sum.join(' ') : sum.slice(0, 19).join(' ') + '...</p>');
+    console.log('summary:: ', summary);
+    if (summary) {
+      sum = summary.split('</p>')[0].split(' ');
+      return (shortSummary =
+        sum.length < 19
+          ? sum.join(' ')
+          : sum.slice(0, 19).join(' ') + '...</p>');
+    } else {
+      return summary;
+    }
   }
   private getImage(image: any) {
     let isImage;
@@ -82,10 +88,10 @@ export class ShowsService {
     return item;
   }
 
-  private isCountry(item) {
-    let country;
-    return (country = item ? item.name : null);
-  }
+  // private isCountry(item) {
+  //   let country;
+  //   return (country = item ? item.name : null);
+  // }
 
   private isNull(item) {
     let notNull;
@@ -108,7 +114,7 @@ export class ShowsService {
       id: data.person.id,
       url: data.person.url,
       name: data.person.name,
-      country: this.isCountry(data.person.country),
+      country: this.isNull(data.person.country),
       birthday: data.person.birthday,
       gender: data.person.gender,
       image: this.getImage(data.person.image),
@@ -117,6 +123,7 @@ export class ShowsService {
   }
 
   private transformToShowsByDate(showsByDate: IShowSearchData): IShow {
+    console.log('showsByDate: summary: ', showsByDate.show.summary);
     return {
       id: showsByDate.show.id,
       name: showsByDate.show.name,
@@ -155,7 +162,6 @@ export class ShowsService {
   }
 
   private transformToSeachShows(shows: IShowSearchData): IShow {
-
     return {
       id: shows.show.id,
       name: shows.show.name,
@@ -179,6 +185,7 @@ export class ShowsService {
   // `http://api.tvmaze.com/shows/${item.id}/images`;
 
   private transformToShowDetail(detail: IShowDetailData): IShowDetail {
+    console.log('showDetail: summary: ', detail.summary);
     return {
       id: detail.id,
       name: detail.name,

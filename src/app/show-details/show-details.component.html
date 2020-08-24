@@ -20,11 +20,13 @@
   </div>
 
   <div id="details-box-2"></div>
+
     <div class="sm-detail" id="network"><span class="label" >Showing on: </span> {{showDetail.network_name}}</div>
     <div class="sm-detail" id="schedule"><span class="label">Schedule: </span>{{showDetail.schedule_time}} on {{showDetail.schedule_days}}.</div>
     <div class="sm-detail" id="genres"><span class="label">Genre: </span> {{showDetail.genres}}</div>
     <div class="sm-detail" id="language"><span class="label">Language: </span> {{showDetail.language}}</div>
-    <div class="sm-detail" id="premier"><span class="label">First Aired: </span> {{showDetail.premiered}}</div>
+    <div class="sm-detail" id="premier"><span class="label">First Aired: </span> {{showDetail.premiered | date:longDate}}</div>
+
     
     <div id="summary" [innerHTML]="showDetail.summary"></div>
   </div>

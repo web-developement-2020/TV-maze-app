@@ -1,5 +1,5 @@
 .flex-container {
-  background: #1D3557; 
+  background: #1D3557;
   display: flex;
   flex: auto;
   align-items: stretch;
@@ -21,8 +21,8 @@ a{
   font-size:2em;
   text-align: center;
   color:#a8dadc;
-  
-  
+
+
 }
 .title h1 {
   color:#f1faee;
@@ -54,7 +54,7 @@ button:focus {
   border:#576e91;
 }
 
-/* 
+/*
 .mat-input-element {
     caret-color: #b87bd3;
 } */
@@ -87,5 +87,10 @@ opacity: 1;
 }
  ::ng-deep.mat-form-field-underline {
   /* change color of underline */
-  background-color: #626262 !important; 
-}  
+  background-color: #626262 !important;
+}
+#logo{
+  margin-top: auto;
+  margin-bottom: auto;
+ margin-right: 30px;
+}
