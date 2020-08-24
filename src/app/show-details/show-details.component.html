@@ -25,7 +25,7 @@
     <div class="sm-detail"><span class="label">Schedule: </span>{{showDetail.schedule_time}} on <div>days {{showDetail.schedule_days}}.</div>
     <div class="sm-detail"><span class="label">Genre: </span> {{showDetail.genres}}</div>
     <div class="sm-detail"><span class="label">Language: </span> {{showDetail.language}}</div>
-    <div class="sm-detail"><span class="label">First Aired: </span> {{showDetail.premiered}}</div>
+    <div class="sm-detail"><span class="label">First Aired: </span> {{showDetail.premiered | date:longDate}}</div>
     
     <div id="summary" [innerHTML]="showDetail.summary"></div>
   </div>
