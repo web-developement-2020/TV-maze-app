@@ -1,20 +1,36 @@
 * {
   box-sizing: border-box;
 }
-#container-div{
+#container-div {
   margin-left: auto;
   margin-right: auto;
 }
 
-#details-box div{
+#details-box div {
   margin: 5px;
 }
 
-.label{
+.label {
   font-weight: bold;
 }
 
-.sm-detail{
+.sm-detail {
   clear: both;
 }
-  
+.flex-container {
+  display: flex;
+}
+#f-c-1 {
+  padding: 20px;
+  padding-left: 260px;
+  padding-right: 0px;
+  margin-right: 0px;
+}
+#f-c-2 {
+  padding: 20px;
+  padding-right: 90px;
+  padding-left: 0px;
+  margin: 18px;
+  margin-left: 0px;
+  font-size: 15px;
+}
