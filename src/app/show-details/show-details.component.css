@@ -7,6 +7,14 @@
   padding: 10px
 }
 
+#schedule{
+  white-space: nowrap;
+}
+
+.bi-star-fill {
+  color: rgb(230, 208, 10);
+}
+
 img{
   height: 205px;
   width: auto;

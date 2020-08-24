@@ -1,7 +1,7 @@
 
 <app-header (searchEvent)=goSearch($event)> </app-header>
 <app-searched-shows [shows]="shows"></app-searched-shows>
-<!-- <main> -->
+<main>
 
   <div *ngIf="!showDetail">
   <app-display-page
@@ -15,7 +15,7 @@
 <div *ngIf="!shows">
   <app-show-details [showDetail]="showDetail"></app-show-details>
 </div>
-<!-- </main> -->
+</main>
 
 <!-- <app-fake-search-results></app-fake-search-results> -->
 

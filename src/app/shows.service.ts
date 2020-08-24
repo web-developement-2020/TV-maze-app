@@ -46,7 +46,7 @@ export class ShowsService {
     date = new Date().toISOString().substring(0, 10);
     return this.httpClient
       .get<IShowSearchData[]>(
-        `https://api.tvmaze.com/schedule?country=US&date=${date}`
+        `https://api.tvmaze.com/schedule?country=US`
       )
       .pipe(
         map((data) => data.map((show) => this.transformToShowsByDate(show)))
@@ -63,10 +63,16 @@ export class ShowsService {
   private toShortSummary(summary: string) {
     let shortSummary;
     let sum;
-    // console.log(shows.show.summary);
-    sum = summary.split('</p>')[0].split(' ');
-    return (shortSummary =
-      sum.length < 19 ? sum.join(' ') : sum.slice(0, 19).join(' ') + '...</p>');
+    console.log('summary:: ', summary);
+    if (summary) {
+      sum = summary.split('</p>')[0].split(' ');
+      return (shortSummary =
+        sum.length < 19
+          ? sum.join(' ')
+          : sum.slice(0, 19).join(' ') + '...</p>');
+    } else {
+      return summary;
+    }
   }
   private getImage(image: any) {
     let isImage;
@@ -82,14 +88,25 @@ export class ShowsService {
     return item;
   }
 
-  private isCountry(item) {
-    let country;
-    return (country = item ? item.name : null);
-  }
+  // private isCountry(item) {
+  //   let country;
+  //   return (country = item ? item.name : null);
+  // }
 
   private isNull(item) {
     let notNull;
     return (notNull = item ? item.name : null);
+  }
+
+  private transformTime(time: any): any{
+    Number(time);
+    let hour = (time.split(':'))[0]
+    let min = (time.split(':'))[1]
+    let part= hour > 12 ? 'pm' : 'am';
+    min = (min+'').length == 1 ? `0${min}` : min;
+    hour = hour > 12 ? hour - 12 : hour;
+    hour = (hour+'').length == 1 ? `0${hour}` : hour;
+    return `${hour}:${min} ${part}`
   }
 
   private transfromToCast(data: ICastData): ICast {
@@ -97,7 +114,7 @@ export class ShowsService {
       id: data.person.id,
       url: data.person.url,
       name: data.person.name,
-      country: this.isCountry(data.person.country),
+      country: this.isNull(data.person.country),
       birthday: data.person.birthday,
       gender: data.person.gender,
       image: this.getImage(data.person.image),
@@ -106,6 +123,7 @@ export class ShowsService {
   }
 
   private transformToShowsByDate(showsByDate: IShowSearchData): IShow {
+    console.log('showsByDate: summary: ', showsByDate.show.summary);
     return {
       id: showsByDate.show.id,
       name: showsByDate.show.name,
@@ -118,7 +136,7 @@ export class ShowsService {
       image: this.getImage(showsByDate.show.image),
       summary: showsByDate.show.summary,
       shortSummary: this.toShortSummary(showsByDate.show.summary),
-      schedule_time: showsByDate.show.schedule.time,
+      schedule_time: this.transformTime(showsByDate.show.schedule.time),
       schedule_days: showsByDate.show.schedule.days,
       network: this.isNull(showsByDate.show.network),
     };
@@ -144,7 +162,6 @@ export class ShowsService {
   }
 
   private transformToSeachShows(shows: IShowSearchData): IShow {
-
     return {
       id: shows.show.id,
       name: shows.show.name,
@@ -157,7 +174,7 @@ export class ShowsService {
       image: this.getImage(shows.show.image),
       summary: shows.show.summary,
       shortSummary: this.toShortName(shows.show.summary),
-      schedule_time: shows.show.schedule.time,
+      schedule_time: this.transformTime(shows.show.schedule.time),
       schedule_days: shows.show.schedule.days,
       network: this.isNull(shows.show.network),
     };
@@ -168,6 +185,7 @@ export class ShowsService {
   // `http://api.tvmaze.com/shows/${item.id}/images`;
 
   private transformToShowDetail(detail: IShowDetailData): IShowDetail {
+    console.log('showDetail: summary: ', detail.summary);
     return {
       id: detail.id,
       name: detail.name,
@@ -178,7 +196,7 @@ export class ShowsService {
       runtime: detail.runtime,
       premiered: detail.premiered,
       officialSite: detail.officialSite,
-      schedule_time: detail.schedule.time,
+      schedule_time: this.transformTime(detail.schedule.time),
       schedule_days: detail.schedule.days,
       rating: detail.rating.average,
       network_name: this.isNull(detail.network),
