@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {IShowDetails} from '../ishow-details'
 import{IShowDetail}from '../ishow-detail';
 // import {ShowService} from '../show.service'
+import {Pipe, PipeTransform} from '@angular/core';
 
 
 @Component({
@@ -14,6 +15,8 @@ export class ShowDetailsComponent implements OnInit {
   @Input() showDetail: IShowDetail;
 
   show: IShowDetails;
+
+  
 
   constructor() {}
 

@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -22,7 +23,6 @@ import { HeaderComponent } from './header/header.component';
 import { MatButtonModule } from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { DatePipe} from '@angular/common';
-
 
 @NgModule({
   declarations: [
@@ -50,7 +50,8 @@ import { DatePipe} from '@angular/common';
     FormsModule,
     ReactiveFormsModule,
     MatExpansionModule,
-    MatButtonModule,],
+    MatButtonModule,
+    MatTooltipModule],
 
   providers: [
     DisplayService,

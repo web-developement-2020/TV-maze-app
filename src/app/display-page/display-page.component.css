@@ -1,3 +1,31 @@
 *{
-  background-color: #a8dadc;
+  background-color: #457b9d;
+  padding-left: .5em;
+  padding-right: .5em;
+  padding-top: .3em;
 }
+
+::ng-deep mat-card{
+  text-align: center;
+  font-size: 1em;
+  height: 30em;
+} 
+
+::ng-deep mat-card-title{
+  height: 20%
+}
+
+
+::ng-deep mat-card img {
+  max-height: 80%;
+  width: auto;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-bottom: 0;
+}  */
+
+
+#show-title{
+  font-family: Proza Libre, sans-serif;
+}
+

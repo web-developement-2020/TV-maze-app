@@ -1,6 +1,8 @@
-
-<app-header (searchEvent)=goSearch($event)> </app-header> 
+<header id="header" style="width: 100vw;">
+<app-header (searchEvent)=goSearch($event)> </app-header>
+</header>
 <app-searched-shows [shows]="shows"></app-searched-shows>
+
 <main>
 
   <div *ngIf="!showDetail">
@@ -11,15 +13,18 @@
     (getDetailEvent)="getShowDetail($event)"
   ></app-display-page>
 </div>
+
 <div *ngIf="!shows">
   <app-show-details [showDetail]="showDetail"></app-show-details>
 </div>
+</main>
 
-<!-- <app-fake-search-results></app-fake-search-results>
+<!-- <app-fake-search-results></app-fake-search-results> -->
 
-<app-display-page></app-display-page>
-</main> -->
+<!-- <app-display-page></app-display-page> -->
 
-    
-<!-- <footer><i>Created by Kanchan Sharma, Lishitha Karnati, Juyean Lee, and Teal Larson. 2020.</i></footer> -->
-
+<footer fxLayout fxLayoutAlign="center" id="footer">
+  <div id="footer-image"><img height="50px"width="70px" src="/assets/images/real.png" alt="image"></div>
+  <div id="footer-text"><i>
+  Created by Kanchan Sharma, Lishitha Karnati, Juyean Lee, and Teal Larson. 2020.</i></div>
+</footer>
