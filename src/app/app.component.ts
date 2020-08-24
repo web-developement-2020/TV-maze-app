@@ -10,6 +10,7 @@ import{IShowDetail} from './ishow-detail';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
+
 export class AppComponent {
   currentSearch: ICurrentSearch;
   shows: IShow[];
@@ -41,8 +42,9 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
+
     this.showsService.getShowByDate().subscribe((data) => {
-      this.showsByDate = data.slice(7,12);
+      this.showsByDate = data.slice(20,25);
     });
   }
 }
