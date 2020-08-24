@@ -1,9 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {IShowDetails} from '../ishow-details'
-import{IShowDetail}from '../ishow-detail';
-// import {ShowService} from '../show.service'
-import {Pipe, PipeTransform} from '@angular/core';
-
+import { IShowDetail } from '../ishow-detail';
 
 @Component({
   selector: 'app-show-details',
@@ -14,13 +10,8 @@ export class ShowDetailsComponent implements OnInit {
   @Input() showId: string;
   @Input() showDetail: IShowDetail;
 
-  show: IShowDetails;
-
-  
 
   constructor() {}
 
-  ngOnInit(): void {
-    // this.showService.getShow('123').subscribe((data) => (this.show = data));
-  }
+  ngOnInit(): void {}
 }
