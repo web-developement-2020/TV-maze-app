@@ -12,7 +12,7 @@ export class SearchedShowsComponent implements OnInit {
 
 
   @Input() shows: IShow[];
-  @Input() showDetail: IShowDetail;
+  // @Input() showDetail: IShowDetail;
   panelOpenState: boolean=false;
   constructor() {}
 

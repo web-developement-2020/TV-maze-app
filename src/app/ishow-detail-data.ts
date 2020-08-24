@@ -11,7 +11,8 @@ export interface IShowDetailData {
     time: string;
     days: [];
   };
-  rating: number;
+  rating: {
+    average:number};
   network:{
     name: string;
   }
