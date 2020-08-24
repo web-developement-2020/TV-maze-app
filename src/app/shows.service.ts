@@ -14,7 +14,6 @@ import { ICastData } from './icast-data';
 })
 export class ShowsService {
   private showUrl = 'https://api.tvmaze.com/shows';
-  // private shows:IShowData;
 
   constructor(private httpClient: HttpClient) {}
 
@@ -45,9 +44,7 @@ export class ShowsService {
     let date;
     date = new Date().toISOString().substring(0, 10);
     return this.httpClient
-      .get<IShowSearchData[]>(
-        `https://api.tvmaze.com/schedule?country=US`
-      )
+      .get<IShowSearchData[]>(`https://api.tvmaze.com/schedule?country=US`)
       .pipe(
         map((data) => data.map((show) => this.transformToShowsByDate(show)))
       );
@@ -63,7 +60,6 @@ export class ShowsService {
   private toShortSummary(summary: string) {
     let shortSummary;
     let sum;
-    console.log('summary:: ', summary);
     if (summary) {
       sum = summary.split('</p>')[0].split(' ');
       return (shortSummary =
@@ -88,25 +84,21 @@ export class ShowsService {
     return item;
   }
 
-  // private isCountry(item) {
-  //   let country;
-  //   return (country = item ? item.name : null);
-  // }
 
   private isNull(item) {
     let notNull;
     return (notNull = item ? item.name : null);
   }
 
-  private transformTime(time: any): any{
+  private transformTime(time: any): any {
     Number(time);
-    let hour = (time.split(':'))[0]
-    let min = (time.split(':'))[1]
-    let part= hour > 12 ? 'pm' : 'am';
-    min = (min+'').length == 1 ? `0${min}` : min;
+    let hour = time.split(':')[0];
+    let min = time.split(':')[1];
+    let part = hour > 12 ? 'pm' : 'am';
+    min = (min + '').length == 1 ? `0${min}` : min;
     hour = hour > 12 ? hour - 12 : hour;
-    hour = (hour+'').length == 1 ? `0${hour}` : hour;
-    return `${hour}:${min} ${part}`
+    hour = (hour + '').length == 1 ? `0${hour}` : hour;
+    return `${hour}:${min} ${part}`;
   }
 
   private transfromToCast(data: ICastData): ICast {
@@ -123,7 +115,6 @@ export class ShowsService {
   }
 
   private transformToShowsByDate(showsByDate: IShowSearchData): IShow {
-    console.log('showsByDate: summary: ', showsByDate.show.summary);
     return {
       id: showsByDate.show.id,
       name: showsByDate.show.name,
@@ -185,7 +176,6 @@ export class ShowsService {
   // `http://api.tvmaze.com/shows/${item.id}/images`;
 
   private transformToShowDetail(detail: IShowDetailData): IShowDetail {
-    console.log('showDetail: summary: ', detail.summary);
     return {
       id: detail.id,
       name: detail.name,

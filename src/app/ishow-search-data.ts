@@ -14,12 +14,12 @@ export interface IShowSearchData {
       original: string;
     };
     summary: string;
-    schedule:{
-      time:string;
-      days:[];
-    },
-    network:{
-      name:string;
-    }
+    schedule: {
+      time: string;
+      days: [];
+    };
+    network: {
+      name: string;
+    };
   };
 }

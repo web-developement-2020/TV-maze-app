@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
-import { ICurrentSearch } from './icurrent-search';
-import { SearchService } from './search.service';
-import {ShowsService} from './shows.service';
+import { ICurrentSearch } from './_misc/icurrent-search';
+import { SearchService } from './_misc/search.service';
+import { ShowsService } from './shows.service';
 import { IShow } from './ishow';
-import{IShowDetail} from './ishow-detail';
+import { IShowDetail } from './ishow-detail';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-
 export class AppComponent {
   currentSearch: ICurrentSearch;
   shows: IShow[];
@@ -34,7 +33,7 @@ export class AppComponent {
       this.shows = data;
     });
   }
-  
+
   getShowDetail(id: number) {
     return this.showsService.getShowById(id).subscribe((data) => {
       this.showDetail = data;
@@ -42,9 +41,8 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-
     this.showsService.getShowByDate().subscribe((data) => {
-      this.showsByDate = data.slice(20,25);
+      this.showsByDate = data.slice(20, 25);
     });
   }
 }

@@ -1,13 +1,13 @@
-#container-div{
+#container-div {
   background: #f1faee;
   width: 90vw;
   margin: 15px auto 20px auto;
   border: black;
-  box-shadow: 2px 4px #F1FAEE;
-  padding: 10px
+  box-shadow: 2px 4px #f1faee;
+  padding: 10px;
 }
 
-#schedule{
+#schedule {
   white-space: nowrap;
 }
 
@@ -15,7 +15,7 @@
   color: rgb(230, 208, 10);
 }
 
-img{
+img {
   height: 205px;
   width: auto;
   float: left;
@@ -23,14 +23,14 @@ img{
   margin-bottom: 15px;
 }
 
-#cast-header h3{
+#cast-header h3 {
   font-weight: bold;
 }
-.cast-member{
+.cast-member {
   display: block;
 }
 
-.cast-member a{
+.cast-member a {
   color: #457b9d;
   text-decoration: none;
   font-weight: bold;
@@ -40,14 +40,14 @@ img{
   clear: both;
 } */
 
-.label{
+.label {
   font-weight: bold;
 }
 
 div {
-  margin:5px;
+  margin: 5px;
 }
 
-#summary{
+#summary {
   margin-top: 10px;
 }
