@@ -2,7 +2,7 @@
   background-color: #457b9d;
   padding-left: .5em;
   padding-right: .5em;
-  padding-top: .3em
+  padding-top: .3em;
 }
 
 ::ng-deep mat-card{
@@ -19,7 +19,6 @@
 ::ng-deep mat-card img {
   max-height: 80%;
   width: auto;
-  max-width: 95%;
   padding-left: 5%;
   padding-right: 5%;
   margin-bottom: 0;

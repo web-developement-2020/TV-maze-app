@@ -1,5 +1,6 @@
 .flex-container {
   background: #1D3557;
+  width: 100vw;
   display: flex;
   flex: auto;
   align-items: stretch;
@@ -16,14 +17,14 @@ a{
 .flex-container > div {
   margin-top: 10px;
 }
+
 .title{
   flex-grow: 1;
   font-size:2em;
   text-align: center;
   color:#a8dadc;
-
-
 }
+
 .title h1 {
   color:#f1faee;
   font-size:.8em;
