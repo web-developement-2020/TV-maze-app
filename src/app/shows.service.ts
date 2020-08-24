@@ -46,7 +46,7 @@ export class ShowsService {
     date = new Date().toISOString().substring(0, 10);
     return this.httpClient
       .get<IShowSearchData[]>(
-        `https://api.tvmaze.com/schedule?country=US&date=${date}`
+        `https://api.tvmaze.com/schedule?country=US`
       )
       .pipe(
         map((data) => data.map((show) => this.transformToShowsByDate(show)))
@@ -98,6 +98,17 @@ export class ShowsService {
     return (notNull = item ? item.name : null);
   }
 
+  private transformTime(time: any): any{
+    Number(time);
+    let hour = (time.split(':'))[0]
+    let min = (time.split(':'))[1]
+    let part= hour > 12 ? 'pm' : 'am';
+    min = (min+'').length == 1 ? `0${min}` : min;
+    hour = hour > 12 ? hour - 12 : hour;
+    hour = (hour+'').length == 1 ? `0${hour}` : hour;
+    return `${hour}:${min} ${part}`
+  }
+
   private transfromToCast(data: ICastData): ICast {
     return {
       id: data.person.id,
@@ -125,7 +136,7 @@ export class ShowsService {
       image: this.getImage(showsByDate.show.image),
       summary: showsByDate.show.summary,
       shortSummary: this.toShortSummary(showsByDate.show.summary),
-      schedule_time: showsByDate.show.schedule.time,
+      schedule_time: this.transformTime(showsByDate.show.schedule.time),
       schedule_days: showsByDate.show.schedule.days,
       network: this.isNull(showsByDate.show.network),
     };
@@ -163,7 +174,7 @@ export class ShowsService {
       image: this.getImage(shows.show.image),
       summary: shows.show.summary,
       shortSummary: this.toShortName(shows.show.summary),
-      schedule_time: shows.show.schedule.time,
+      schedule_time: this.transformTime(shows.show.schedule.time),
       schedule_days: shows.show.schedule.days,
       network: this.isNull(shows.show.network),
     };
@@ -185,7 +196,7 @@ export class ShowsService {
       runtime: detail.runtime,
       premiered: detail.premiered,
       officialSite: detail.officialSite,
-      schedule_time: detail.schedule.time,
+      schedule_time: this.transformTime(detail.schedule.time),
       schedule_days: detail.schedule.days,
       rating: detail.rating.average,
       network_name: this.isNull(detail.network),
