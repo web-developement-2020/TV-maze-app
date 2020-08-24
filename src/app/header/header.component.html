@@ -1,5 +1,5 @@
 <div class="flex-container" style="width: 100vw;">
-  <div class="title"(click)="refreshPage()">
+  <div class="title" (click)="refreshPage()">
     <svg
       width="3em"
       height="1.4em"
@@ -13,14 +13,15 @@
       />
     </svg>
     <span id="title-text">
-     <h1>TV Repositorium</h1>
+      <h1>TV Repositorium</h1>
     </span>
   </div>
 
   <div class="search-form">
     <form class="example-form">
       <mat-form-field class="search-field">
-        <input class="search-input"
+        <input
+          class="search-input"
           matInput
           [formControl]="search"
           placeholder="Find your favorite shows!"
@@ -31,7 +32,5 @@
         <mat-icon>search</mat-icon>
       </button>
     </form>
-
   </div>
-  <!-- <div id="logo" fxHide.gt-xs><img height="50px"width="70px" src="/assets/images/real.png" alt="image"></div> -->
 </div>

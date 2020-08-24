@@ -1,39 +1,41 @@
-#container-div{
+#container-div {
   margin-left: auto;
   margin-right: auto;
 }
 
-#details-box div{
+#details-box div {
   margin: 5px;
 }
 
-.label{
+.label {
   font-weight: bold;
 }
 
-.sm-detail{
+.sm-detail {
   clear: both;
 }
-  
 
-::ng-deep mat-expansion-panel{
+::ng-deep mat-expansion-panel {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin: 8px;
 }
-::ng-deep mat-accordion{
+::ng-deep mat-accordion {
   width: 100%;
 }
 
-::ng-deep mat-expansion-panel-header{
-  background: rgb(230,57,70);
-  background: linear-gradient(90deg, rgba(241, 250, 238, 1) 0%, rgba(168, 218, 220, 1) 100%);
+::ng-deep mat-expansion-panel-header {
+  background: rgb(230, 57, 70);
+  background: linear-gradient(
+    90deg,
+    rgba(241, 250, 238, 1) 0%,
+    rgba(168, 218, 220, 1) 100%
+  );
   color: #f1faee;
 }
 
-
-.grid-container{
+.grid-container {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
@@ -103,25 +105,23 @@ img {
 .media-body {
   clear: both;
   color: rgb(23, 23, 23);
-  font-size:1em;
+  font-size: 1em;
 }
 
 .bi-star-fill {
   color: rgb(230, 208, 10);
 }
 
- .mat-expansion-panel-header {
-  height: 130px; 
- 
+.mat-expansion-panel-header {
+  height: 130px;
 }
 .mat-expansion-panel {
-    background: #ffffff;
-    color: rgb(214, 214, 214);
+  background: #ffffff;
+  color: rgb(214, 214, 214);
 }
 
-
-::ng-deep mat-expansion-panel-header.mat-expansion-panel-header:hover{
-  background:#457b9d;
+::ng-deep mat-expansion-panel-header.mat-expansion-panel-header:hover {
+  background: #457b9d;
 }
 /* .accordion-hover::after{
     background:;*/

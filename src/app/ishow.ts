@@ -11,6 +11,6 @@ export interface IShow {
   summary: string;
   shortSummary: string;
   schedule_time: string;
-  schedule_days:[];
+  schedule_days: [];
   network: string;
 }

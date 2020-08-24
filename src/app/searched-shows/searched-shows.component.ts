@@ -9,11 +9,9 @@ import { ShowDetailsComponent } from '../show-details/show-details.component';
   styleUrls: ['./searched-shows.component.css'],
 })
 export class SearchedShowsComponent implements OnInit {
-
-
   @Input() shows: IShow[];
   // @Input() showDetail: IShowDetail;
-  panelOpenState: boolean=false;
+  panelOpenState: boolean = false;
   constructor() {}
 
   ngOnInit(): void {}
