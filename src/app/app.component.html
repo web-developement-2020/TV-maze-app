@@ -1,6 +1,8 @@
-
+<header id="header" style="width: 100vw;">
 <app-header (searchEvent)=goSearch($event)> </app-header>
+</header>
 <app-searched-shows [shows]="shows"></app-searched-shows>
+
 <main>
 
   <div *ngIf="!showDetail">
@@ -21,7 +23,8 @@
 
 <!-- <app-display-page></app-display-page> -->
 
-<div class="flex-container">
-<div id="f-c-1"><img height="50px"width="70px" src="/assets/images/real.png" alt="image"></div><div id="f-c-2"><i>
+<footer fxLayout fxLayoutAlign="center" id="footer">
+  <div id="footer-image"><img height="50px"width="70px" src="/assets/images/real.png" alt="image"></div>
+  <div id="footer-text"><i>
   Created by Kanchan Sharma, Lishitha Karnati, Juyean Lee, and Teal Larson. 2020.</i></div>
-</div>
+</footer>
