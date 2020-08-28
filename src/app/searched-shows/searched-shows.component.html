@@ -41,8 +41,9 @@
                 >{{ el.premiered | date: longDate }}
               </div>
 
-              <div class="sm-detail" id="schedule">
-                <span class="label">Airs at: </span> {{ el.schedule_time }} on
+              <div  *ngIf="!el.schedule_time==undefined" class="sm-detail" id="schedule">
+                <span class="label">Airs at: </span>
+                {{ el.schedule_time }} on
                 {{ el.schedule_days }}
               </div>
 
