@@ -1,9 +1,9 @@
-https://youtu.be/W1KRwsMhTX8
-
+<img src="/tvmaze-mockup.png" width=60%>
 
 # MyTvMazeApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.  See a video walkthrough [on YouTube](https://youtu.be/W1KRwsMhTX8
+)
 
 ## Development server
 
